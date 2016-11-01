@@ -1,5 +1,8 @@
 ﻿Configuration BaseServer {
 
+    Import-DSCResource -ModuleName PSDesiredStateConfiguration
+    Import-DSCResource -ModuleName xWindowsUpdate
+
     Node BaseServer {
 
         # ----- Create Temp Directory on C:
@@ -10,8 +13,6 @@
         }
 
         # ----- Patch : Install Security, Important and Optional patches from MSUpdate
-        Import-DSCResource -ModuleName xWindowsUpdate
-
         xWindowsUpdateAgent MSUpdates {
             IsSingleInstance = 'Yes'
             UpdateNow = $True
@@ -22,6 +23,7 @@
     }
 }
 
-baseserver  -OutputPath 'C:\DSC Configs\' -verbose 
+baseserver -OutputPath 'C:\DSC Configs\' -verbose 
 
 New-DscChecksum -Path 'C:\DSC Configs\BaseServer.mof' -OutPath 'C:\DSC Configs' -Force
+
