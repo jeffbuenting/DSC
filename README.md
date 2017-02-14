@@ -1,4 +1,4 @@
-# DSCConfigs
+# DSC
 DSC Pull Config files ( v5.0)
 
 
