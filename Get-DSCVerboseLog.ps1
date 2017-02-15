@@ -11,8 +11,18 @@
 
         This cmdlet retrieves the specified log.
 
+    .Parameter ComputerName
+        Name of the computer whose logs we want to obtain.  This is the name of the computer we want the DSC history.
+
+    .Parameter JobID
+        Job ID GUID of the DSC Log.    
+
     .Link
         http://nanalakshmanan.com/blog/Historical-Job-Logs/
+
+    .Note
+        Author : Jeff Buenting
+        Date : 2017 FEB 14
 #>
 
     [CmdletBinding()]
@@ -56,4 +66,4 @@
 
 #{16FBE203-F22A-11E6-80BA-00155D000A30}-0.details.json
 
-#Get-DSCVerboseLog -ComputerName jb-sql01.stratuslivedemo.com -Verbose 
+Get-DSCVerboseLog -ComputerName jb-sql01.stratuslivedemo.com -Verbose 
