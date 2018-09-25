@@ -83,4 +83,6 @@
 
 
 
-#$E = Get-DSCEventLog -ComputerName 'jb-sql01.stratuslivedemo.com' -Log 'Microsoft-Windows-DSC/Analytic' -JobID '{F2DC9EFC-F3B8-11E6-80BD-00155D000A30}'   -verbose
+$E = Get-DSCEventLog -ComputerName 'jb-sql01.stratuslivedemo.com' -Log 'Microsoft-Windows-DSC/Analytic' -JobID '{031B1F38-F3AC-11E6-80BD-00155D000A30} '   -verbose
+
+$E.message
